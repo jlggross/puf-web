@@ -57,4 +57,15 @@ Test server: `yarn start`
 - To work with styles
 - Install: `yarn add styled-components
 
+### createGlobalStyle
+
+- A method from styled-components to apply global css in a theme
+- We can use themes inside the global style
+  - This a difference from createGlobalStyle to a common .css file
+
 ## Path Alias
+
+- Install: `yarn add --dev react-app-rewired`
+- New file config-overrides.js
+  - Alias for 'src/' is '~'
+- Also, in package.json we haver to change the scripts 'react-scripts' to 'react-app-rewired'
