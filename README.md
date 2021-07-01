@@ -73,3 +73,10 @@ Test server: `yarn start`
 - New file config-overrides.js
   - Alias for 'src/' is '~'
 - Also, in package.json we haver to change the scripts 'react-scripts' to 'react-app-rewired'
+
+## More info
+
+1. Atomic Design: <https://bradfrost.com/blog/post/atomic-web-design/>
+   1. Divide components in basic building blocks
+2. Barrel File: <https://adrianfaciu.dev/posts/barrel-files/>
+   1. Used to add different exports in a single file and re-export them
