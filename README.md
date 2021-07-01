@@ -63,6 +63,10 @@ Test server: `yarn start`
 - We can use themes inside the global style
   - This a difference from createGlobalStyle to a common .css file
 
+### CSS Reset
+
+- Padronize tags between different systems and OSs
+
 ## Path Alias
 
 - Install: `yarn add --dev react-app-rewired`

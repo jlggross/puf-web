@@ -1,3 +1,11 @@
+const th = (prop) => (value) => (props) => props.theme[prop][value] || value
+
+export const theme = {
+	space: th('spaces'),
+	size: th('fontSizes'),
+	color: th('colors'),
+}
+
 export const background = (props) =>
 	props.bg && `background: ${props.theme.colors[props.bg]};`
 
