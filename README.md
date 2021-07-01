@@ -45,3 +45,9 @@ yarn add --dev eslint prettier eslint-plugin-prettier eslint-config-prettier esl
 Test server: `yarn start`
 
 - Opens in localhost:3000
+
+## Project Colors
+
+- Website: <https://coolors.co/>
+  - Check palette colors
+  - From this website we can check the name of each color code
