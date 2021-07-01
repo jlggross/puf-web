@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import { theme } from '~/components/Theme/styled'
+import { theme, background, padding, margin } from '~/components/Theme/styled'
 
 const Label = styled('label')`
-	padding: ${theme.space(2)}px;
+	padding: ${theme.space(2)}px ${theme.space(3)}px;
 `
 
 const Input = styled('input')`
@@ -27,7 +27,12 @@ const Main = styled('main')`
 	flex: 1;
 `
 
-const Form = styled('form')`
+const Form = styled('form')``
+
+const Box = styled('div')`
+	${background}
+	${padding}
+	${margin}
 	display: flex;
 	flex-direction: column;
 `
@@ -36,8 +41,15 @@ export const Signup = () => {
 	return (
 		<Main>
 			<Form>
-				<Label htmlFor="name">Email</Label>
-				<Input type="text" name="name" id="name" />
+				<Box mb={3}>
+					<Label htmlFor="name">Name</Label>
+					<Input type="text" name="name" id="name" />
+				</Box>
+
+				<Box mb={3}>
+					<Label htmlFor="email">Email</Label>
+					<Input type="text" name="email" id="email" />
+				</Box>
 			</Form>
 		</Main>
 	)
