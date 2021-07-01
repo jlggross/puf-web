@@ -1,24 +1,18 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import { Field } from '~/components/'
+import { Box, Field } from '~/components/'
 
-const Main = styled('main')`
-	display: flex;
+const Main = styled(Box)`
 	justify-content: center;
 	align-items: center;
 	flex: 1;
 `
-
-const Form = styled('form')``
-
 export const Signup = () => {
 	return (
-		<Main>
-			<Form>
-				<Field type="text" name="name" label="Nome" />
-				<Field type="text" name="email" label="E-mail" />
-			</Form>
+		<Main as="main" flexbox="column">
+			<Field type="text" name="name" label="Nome" mb={3} />
+			<Field type="text" name="email" label="E-mail" />
 		</Main>
 	)
 }
