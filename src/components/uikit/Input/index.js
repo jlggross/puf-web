@@ -13,4 +13,5 @@ export const Input = styled('input')`
 	color: ${theme.color('white')};
 	padding: ${theme.space(2)}px ${theme.space(1)}px;
 	font-size: inherit;
+	outline: none;
 `

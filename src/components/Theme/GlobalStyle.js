@@ -32,5 +32,6 @@ export const GlobalStyle = createGlobalStyle`
 
   input {
     font-size: inherit;
+    outline: none;
   }
 `
