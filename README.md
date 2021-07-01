@@ -51,3 +51,10 @@ Test server: `yarn start`
 - Website: <https://coolors.co/>
   - Check palette colors
   - From this website we can check the name of each color code
+
+## Styled-components
+
+- To work with styles
+- Install: `yarn add styled-components
+
+## Path Alias
