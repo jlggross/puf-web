@@ -1,7 +1,13 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import { theme, background, padding, margin } from '~/components/Theme/styled'
+import {
+	theme,
+	background,
+	padding,
+	margin,
+	flexbox,
+} from '~/components/Theme/styled'
 
 const Label = styled('label')`
 	padding: ${theme.space(2)}px ${theme.space(3)}px;
@@ -33,20 +39,19 @@ const Box = styled('div')`
 	${background}
 	${padding}
 	${margin}
-	display: flex;
-	flex-direction: column;
+  ${flexbox}
 `
 
 export const Signup = () => {
 	return (
 		<Main>
 			<Form>
-				<Box mb={3}>
+				<Box mb={3} flexbox="column">
 					<Label htmlFor="name">Name</Label>
 					<Input type="text" name="name" id="name" />
 				</Box>
 
-				<Box mb={3}>
+				<Box mb={3} flexbox="column">
 					<Label htmlFor="email">Email</Label>
 					<Input type="text" name="email" id="email" />
 				</Box>

@@ -6,6 +6,16 @@ export const theme = {
 	color: th('colors'),
 }
 
+export const flexbox = (props) => {
+	const direction =
+		typeof props.flexbox === Boolean ? props.flexDirection : props.flexbox
+
+	return `
+    ${(props.flexbox && 'display: flex') || ''};
+    ${(direction && `flex-direction: ${direction}`) || ''};
+  `
+}
+
 export const background = (props) =>
 	props.bg && `background: ${props.theme.colors[props.bg]};`
 
