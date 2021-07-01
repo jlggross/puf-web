@@ -11,7 +11,7 @@ export const Input = styled('input')`
 
 	border-radius: 200px;
 	color: ${theme.color('white')};
-	padding: ${theme.space(2)}px ${theme.space(1)}px;
+	padding: ${theme.space(2)}px ${theme.space(3)}px;
 	font-size: inherit;
 	outline: none;
 `
