@@ -6,6 +6,7 @@ import { Box, Field, Button } from '~/components/'
 
 export const Signup = () => {
 	const [values, setValues] = useState({})
+	const [loading, setLoading] = useState(false)
 
 	const onChange = (event) => {
 		setValues((prev) => ({
@@ -14,14 +15,23 @@ export const Signup = () => {
 		}))
 	}
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault()
-		console.log(values)
+		setLoading(true)
 
-		axios
-			.post('http://localhost:9901/users')
-			.then((response) => console.log(response.data))
+		try {
+			const response = await axios.post('http://localhost:9901/users', values)
+			console.log(response.data)
+		} catch (error) {
+			console.log(error)
+		} finally {
+			setLoading(false)
+		}
 	}
+
+	axios
+		.get('http://localhost:9901/users')
+		.then((response) => console.log(response.data))
 
 	return (
 		<Box flex={1} flexbox="column" center>
@@ -33,6 +43,7 @@ export const Signup = () => {
 						label="Nome"
 						mb={3}
 						onChange={onChange}
+						disabled={loading}
 					/>
 					<Field
 						type="text"
@@ -40,6 +51,7 @@ export const Signup = () => {
 						label="E-mail"
 						mb={3}
 						onChange={onChange}
+						disabled={loading}
 					/>
 					<Field
 						type="password"
@@ -47,10 +59,13 @@ export const Signup = () => {
 						label="Senha"
 						mb={3}
 						onChange={onChange}
+						disabled={loading}
 					/>
 
 					<Box flexbox center>
-						<Button onClick={onSubmit}>Registrar</Button>
+						<Button type="submit" loading={loading}>
+							Registrar
+						</Button>
 					</Box>
 				</form>
 			</Box>

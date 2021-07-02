@@ -2,9 +2,30 @@
 
 Notes for the development of the frontend of the PayUfirst (PUF) project.
 
+## Summary
+
+- [Web (Frontend)](#web-frontend)
+  - [Summary](#summary)
+  - [**Technologies and packages**](#technologies-and-packages)
+  - [**Create React App**](#create-react-app)
+    - [**Preparing the project**](#preparing-the-project)
+  - [Project Colors](#project-colors)
+  - [Styled-components](#styled-components)
+    - [createGlobalStyle](#createglobalstyle)
+    - [CSS Reset](#css-reset)
+  - [Path Alias](#path-alias)
+  - [HTTP Requests](#http-requests)
+    - [Test HTTP Requests](#test-http-requests)
+  - [More info](#more-info)
+
 ## **Technologies and packages**
 
 1. Create React App (CRA)
+2. Styled-components
+3. Configure Path Alias
+4. HTTP Requests
+   1. Axios
+   2. JSON Placeholder
 
 ## **Create React App**
 
@@ -89,8 +110,6 @@ axios
 	.get('https://jsonplaceholder.typicode.com/todos/1')
 	.then((response) => console.log(response.data))
 ```
-
-### CORS
 
 ### Test HTTP Requests
 

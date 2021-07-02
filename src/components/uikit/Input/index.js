@@ -14,4 +14,6 @@ export const Input = styled('input')`
 	padding: ${theme.space(2)}px ${theme.space(3)}px;
 	font-size: inherit;
 	outline: none;
+
+	${({ disabled }) => disabled && 'opacity: 0.5;'}
 `

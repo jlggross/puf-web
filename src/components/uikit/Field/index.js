@@ -4,9 +4,9 @@ import { Box } from '~/components/uikit/Box'
 import { Input } from '~/components/uikit/Input'
 import { Label } from '~/components/uikit/Label'
 
-export const Field = ({ type, name, label, ...props }) => (
+export const Field = ({ type, name, label, disabled, ...props }) => (
 	<Box {...props} flexbox="column">
 		<Label htmlFor={name}>{label}</Label>
-		<Input type={type} name={name} id={name} />
+		<Input type={type} name={name} id={name} disabled={disabled} />
 	</Box>
 )
