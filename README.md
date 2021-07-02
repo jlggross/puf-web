@@ -74,6 +74,28 @@ Test server: `yarn start`
   - Alias for 'src/' is '~'
 - Also, in package.json we haver to change the scripts 'react-scripts' to 'react-app-rewired'
 
+## HTTP Requests
+
+1. fetch
+   1. Native to javascript
+2. axios
+   1. Website: <https://www.npmjs.com/package/axios>
+   2. Install: `yarn add axios`
+
+```javascript
+// Use example
+
+axios
+	.get('https://jsonplaceholder.typicode.com/todos/1')
+	.then((response) => console.log(response.data))
+```
+
+### CORS
+
+### Test HTTP Requests
+
+- JSON Placeholder: <https://jsonplaceholder.typicode.com/>
+
 ## More info
 
 1. Atomic Design: <https://bradfrost.com/blog/post/atomic-web-design/>

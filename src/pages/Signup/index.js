@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 
 import { Box, Field, Button } from '~/components/'
 
@@ -15,7 +16,11 @@ export const Signup = () => {
 
 	const onSubmit = (event) => {
 		event.preventDefault()
-		console.log(values, event)
+		console.log(values)
+
+		axios
+			.post('http://localhost:9901/users')
+			.then((response) => console.log(response.data))
 	}
 
 	return (
