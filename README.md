@@ -16,6 +16,7 @@ Notes for the development of the frontend of the PayUfirst (PUF) project.
   - [Path Alias](#path-alias)
   - [HTTP Requests](#http-requests)
     - [Test HTTP Requests](#test-http-requests)
+  - [Form Validation](#form-validation)
   - [More info](#more-info)
 
 ## **Technologies and packages**
@@ -114,6 +115,11 @@ axios
 ### Test HTTP Requests
 
 - JSON Placeholder: <https://jsonplaceholder.typicode.com/>
+
+## Form Validation
+
+- Yup: <https://github.com/jquense/yup>
+  - `yarn add yup`
 
 ## More info
 
