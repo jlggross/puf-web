@@ -43,22 +43,27 @@ export const Signup = () => {
 						label="Nome"
 						mb={3}
 						onChange={onChange}
+						error={'Error'}
 						disabled={loading}
 					/>
+
 					<Field
 						type="text"
 						name="email"
 						label="E-mail"
 						mb={3}
 						onChange={onChange}
+						error={'Error'}
 						disabled={loading}
 					/>
+
 					<Field
 						type="password"
 						name="password"
 						label="Senha"
 						mb={3}
 						onChange={onChange}
+						error={'Error'}
 						disabled={loading}
 					/>
 
