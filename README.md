@@ -13,6 +13,7 @@ Notes for the development of the frontend of the PayUfirst (PUF) project.
   - [Styled-components](#styled-components)
     - [createGlobalStyle](#createglobalstyle)
     - [CSS Reset](#css-reset)
+    - [Google Fonts](#google-fonts)
   - [Path Alias](#path-alias)
   - [HTTP Requests](#http-requests)
     - [Test HTTP Requests](#test-http-requests)
@@ -89,6 +90,33 @@ Test server: `yarn start`
 
 - Padronize tags between different systems and OSs
 
+### Google Fonts
+
+- Website: <https://fonts.google.com/>
+- You can find a font and download it
+- Example:
+
+  - Manrope: <https://fonts.google.com/specimen/Manrope?query=Manrope>
+  - Select the fonts you need
+  - It is possible to download the fonts through HTML link:
+
+  ```html
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+  	href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
+  	rel="stylesheet"
+  />
+  ```
+
+  - It os possible to use in a CSS structure:
+
+  ```CSS
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+  </style>
+  ```
+
 ## Path Alias
 
 - Install: `yarn add --dev react-app-rewired`
@@ -120,6 +148,8 @@ axios
 
 - Yup: <https://github.com/jquense/yup>
   - `yarn add yup`
+- Formik:
+  - `yarn add formik`
 
 ## More info
 
