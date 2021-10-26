@@ -13,8 +13,10 @@ const Link = styled('a')`
 `
 
 const validationSchema = yup.object().shape({
-	name: yup.string().required('Informe o seu nome'),
-	email: yup.string().required('Informe o seu e-mail').email('E-mail inválido'),
+	username: yup
+		.string()
+		.required('Informe o seu e-mail')
+		.email('E-mail inválido'),
 	password: yup.string().required('Digite uma senha'), // add password validation for at least 6 characters
 })
 
@@ -27,7 +29,9 @@ const validationSchema = yup.object().shape({
 export const Form = () => {
 	const onSubmit = async (values) => {
 		try {
-			const response = await axios.post('http://localhost:9901/users', values)
+			const response = await axios.get('http://localhost:9901/login', {
+				auth: values,
+			})
 			console.log(response.data)
 		} catch (error) {
 			console.log(error)
@@ -46,8 +50,7 @@ export const Form = () => {
 		onSubmit,
 		validationSchema: validationSchema,
 		initialValues: {
-			name: '',
-			email: '',
+			username: '',
 			password: '',
 		},
 	})
@@ -56,22 +59,10 @@ export const Form = () => {
 		<form onSubmit={handleSubmit}>
 			<Field
 				type="text"
-				name="name"
-				label="Nome"
-				value={values.name}
-				error={touched.name && errors.name}
-				onChange={handleChange}
-				onBlur={handleBlur}
-				disabled={isSubmitting}
-				mb={3}
-			/>
-
-			<Field
-				type="text"
-				name="email"
+				name="username"
 				label="E-mail"
-				value={values.email}
-				error={touched.email && errors.email}
+				value={values.username}
+				error={touched.username && errors.username}
 				onChange={handleChange}
 				onBlur={handleBlur}
 				disabled={isSubmitting}
@@ -92,12 +83,15 @@ export const Form = () => {
 
 			<Box flexbox="column" center>
 				<Button type="submit" loading={isSubmitting} m={1}>
-					Registrar
+					Entrar
 				</Button>
 
-				<Link href="#" m={1} fontSize={1} color="gray" fontWeight="bold">
-					Já sou cadastrado!
-				</Link>
+				<Box m={1} fontSize={1} color="gray">
+					Não possui cadastro?{' '}
+					<Link href="#" color="gray" fontWeight="bold">
+						Cadastre-se!
+					</Link>
+				</Box>
 			</Box>
 		</form>
 	)
