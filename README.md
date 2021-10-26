@@ -109,7 +109,7 @@ Test server: `yarn start`
   />
   ```
 
-  - It os possible to use in a CSS structure:
+  - It is possible to use in a CSS structure with style HTML tag:
 
   ```CSS
   <style>
