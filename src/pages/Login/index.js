@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
 
 import { Logo, Box, font } from '~/components/'
 
@@ -16,7 +17,20 @@ const CenteredBox = ({ children, ...props }) => (
 	</Box>
 )
 
-export const Login = () => {
+export const Login = ({ onSuccess }) => {
+	const onSubmit = async (values) => {
+		try {
+			const res = await axios.get('http://localhost:9901/login', {
+				auth: values,
+			})
+
+			console.log(res.data)
+			onSuccess(res.data)
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
 	return (
 		<Box flex={1} flexbox>
 			<CenteredBox bg="black">
@@ -25,7 +39,7 @@ export const Login = () => {
 			</CenteredBox>
 			<CenteredBox>
 				<Title textAlign="center">Login</Title>
-				<Form />
+				<Form onSubmit={onSubmit} />
 			</CenteredBox>
 		</Box>
 	)

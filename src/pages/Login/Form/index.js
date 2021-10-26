@@ -1,5 +1,4 @@
 import * as React from 'react'
-import axios from 'axios'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import styled from 'styled-components'
@@ -26,18 +25,7 @@ const validationSchema = yup.object().shape({
 		.then((response) => console.log(response.data))
   */
 
-export const Form = () => {
-	const onSubmit = async (values) => {
-		try {
-			const response = await axios.get('http://localhost:9901/login', {
-				auth: values,
-			})
-			console.log(response.data)
-		} catch (error) {
-			console.log(error)
-		}
-	}
-
+export const Form = ({ onSubmit }) => {
 	const {
 		values,
 		errors,
