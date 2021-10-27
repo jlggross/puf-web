@@ -18,6 +18,7 @@ Notes for the development of the frontend of the PayUfirst (PUF) project.
   - [HTTP Requests](#http-requests)
     - [Test HTTP Requests](#test-http-requests)
   - [Form Validation](#form-validation)
+  - [React Router](#react-router)
   - [More info](#more-info)
 
 ## **Technologies and packages**
@@ -150,6 +151,16 @@ axios
   - `yarn add yup`
 - Formik:
   - `yarn add formik`
+
+## React Router
+
+```bash
+yarn add react-router-dom
+```
+
+- Link: <https://reactrouter.com/web/guides/quick-start>
+
+- Manage routing
 
 ## More info
 

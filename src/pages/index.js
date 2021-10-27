@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 import { Theme } from '~/components/'
 
-// import { Signup } from './Signup'
+import { Signup } from './Signup'
 import { Login } from './Login'
 
 const Dashboard = ({ onLogout }) => {
@@ -13,6 +15,24 @@ const Dashboard = ({ onLogout }) => {
 		</div>
 	)
 }
+
+const AuthRoutes = ({ setState }) => (
+	<>
+		<Route path="/">
+			<Login onSuccess={setState} />
+		</Route>
+
+		<Route path="/signup">
+			<Signup />
+		</Route>
+	</>
+)
+
+const LoggedInRoutes = ({ logout }) => (
+	<Route path="/">
+		<Dashboard onLogout={logout} />
+	</Route>
+)
 
 export const App = () => {
 	const [state, setState] = useState(() => {
@@ -28,11 +48,13 @@ export const App = () => {
 
 	return (
 		<Theme>
-			{state?.user ? (
-				<Dashboard onLogout={logout} />
-			) : (
-				<Login onSuccess={setState} />
-			)}
+			<Router>
+				{state?.user ? (
+					<LoggedInRoutes logout={logout} />
+				) : (
+					<AuthRoutes setState={setState} />
+				)}
+			</Router>
 		</Theme>
 	)
 }
