@@ -3,10 +3,11 @@ import axios from 'axios'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import styled from 'styled-components'
+import { Link as RouterLink } from 'react-router-dom'
 
 import { Box, Field, Button, font, margin } from '~/components/'
 
-const Link = styled('a')`
+const Link = styled(RouterLink)`
 	text-decoration: none;
 	${font}
 	${margin}
@@ -95,7 +96,7 @@ export const Form = () => {
 					Registrar
 				</Button>
 
-				<Link href="#" m={1} fontSize={1} color="gray" fontWeight="bold">
+				<Link to="/" m={1} fontSize={1} color="gray" fontWeight="bold">
 					Já sou cadastrado!
 				</Link>
 			</Box>

@@ -159,7 +159,6 @@ yarn add react-router-dom
 ```
 
 - Link: <https://reactrouter.com/web/guides/quick-start>
-
 - Manage routing
 
 ## More info

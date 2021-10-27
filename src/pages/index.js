@@ -18,7 +18,7 @@ const Dashboard = ({ onLogout }) => {
 
 const AuthRoutes = ({ setState }) => (
 	<>
-		<Route path="/">
+		<Route path="/" exact>
 			<Login onSuccess={setState} />
 		</Route>
 
